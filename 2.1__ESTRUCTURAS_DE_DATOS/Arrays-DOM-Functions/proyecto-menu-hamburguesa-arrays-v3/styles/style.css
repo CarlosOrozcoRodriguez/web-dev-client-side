@@ -1,0 +1,150 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/*La importancia de este elemento radica en difuminar el fondo al invoicar le menú hamburguesa*/
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente */
+    z-index: 1; /* Colócalo sobre todo el contenido, pero detrás del menú */
+    display: none; /* Inicialmente oculto */
+}
+
+
+.navbar {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    align-items: center;
+    z-index: 1; /* Menú con índice z más bajo */
+}
+
+.logo {
+    font-size: 24px;
+}
+
+.nav-links {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 20px;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+.nav-links a:focus {
+    background-color: #555;
+    color: #fff;
+}
+.nav-links a:hover {
+    color: rgb(0, 187, 255); /* Cambia el color del texto a azul */
+    text-decoration: underline; /* Subraya el texto */
+}
+.nav-links.active {
+    z-index: 2; /* Asegúrate de que el menú tenga un índice z mayor cuando esté activo */
+}
+
+/* Estilos para el ícono del carrito */
+.navbar {
+    position: relative;
+}
+
+.carrito-link {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+#carrito-count {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+}
+
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.4s;
+}
+
+.content {
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        text-align: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 20px 0;
+    }
+
+    .nav-links.active {
+        display: grid;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+.image-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    z-index: 2; /* Imágenes con índice z más alto */
+}
+
+.image {
+    position: relative;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    overflow: hidden; /* Ocultar desbordamiento */
+}
+
+.image img {
+    max-width: 100%;
+    max-height: 100%; /* La imagen se ajusta al alto máximo del bloque */
+    display: block; /* Evitar espacio debajo de la imagen */
+    margin: 0 auto; /* Centrar la imagen horizontalmente */
+}
+
+.image figcaption {
+    position: absolute;
+    bottom: 0; /* Colocar el figcaption en la parte inferior del contenedor */
+    width: 100%; /* Ancho completo del contenedor */
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+    color: white;
+    padding: 5px;
+    font-size: 14px;
+}

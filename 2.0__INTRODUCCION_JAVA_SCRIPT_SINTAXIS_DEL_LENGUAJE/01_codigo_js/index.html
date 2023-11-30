@@ -1,0 +1,66 @@
+<!-- configurar el vscode con las extensiones theme (Atom One Dark), material icon theme para los íconos (Ambos en preferencias) : para hacer scroll con el ratón ir a file-preferences-settings y buscar zoom y checkar
+ -->
+
+
+<!-- (Unidad 2 introducción a la programación en javascript) 
+Dónde y cómo ejecutar javascript, ver las tres formas-->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Código embebido</title>
+
+    <!-- fichero externo ; Si el código está en la misma carpeta la ruta sería : "codigo_embebido.js"; si el código está a dos carpetas anteriores sería : "../../scripts/codigo_embebido.js"-->
+    <script src="/js/index.js" type="text/javascript"></script>
+
+
+</head>
+
+<!-- Código entre etiquetas de script -->
+
+<body>
+
+    <script>
+        document.write("Código JavaScript dentro de HTML");
+        console.log("código embebido sin fichero externo");
+    </script>
+    <!-- Código asociado a un elemento del docuemnto DOM -->
+    <p onclick="alert('Un mensaje lanzado por JavaScript')">
+        Esto es un párrafo con un evento asociado
+    </p>
+
+<script>
+
+let horaDelDia = prompt("Ingresa la hora del día");
+
+if (horaDelDia >= 0 && horaDelDia < 12) 
+
+    { 
+        alert("Buenos días");
+    }
+        
+        else if(horaDelDia >= 12 && horaDelDia < 18)
+
+        {
+            alert("Buenas tardes");
+        }
+    
+        else if(horaDelDia >= 18 && horaDelDia <= 24 )
+
+        {
+            alert("Buenas noches");
+        }   
+
+else
+
+{
+    alert("no es una hora correcta");
+}
+
+</script>
+
+</body>
+
+</html>	

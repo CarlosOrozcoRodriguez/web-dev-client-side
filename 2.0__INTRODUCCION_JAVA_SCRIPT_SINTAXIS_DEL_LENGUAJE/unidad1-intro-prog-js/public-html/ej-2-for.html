@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="palabras">
+        <!-- Aquí se mostrarán las palabras ingresadas por el usuario -->
+    </div>
+
+    <script>
+        // Obtén el elemento div donde mostrar las palabras
+        var palabrasDiv = document.getElementById("palabras");
+
+        // Inicializa una cadena para almacenar las palabras ingresadas
+        var palabrasIngresadas = "";
+
+        // Función para solicitar una palabra al usuario
+        function solicitarPalabra() {
+            var palabra = prompt("Introduce una palabra:");
+            return palabra;
+        }
+
+        // Ciclo para solicitar palabras hasta que se ingrese "SALIR" o "salir"
+        while (true) {
+            var palabraIngresada = solicitarPalabra();
+
+            // Verifica si se debe salir del ciclo
+            if (palabraIngresada === "SALIR" || palabraIngresada === "salir") {
+                break;
+            }
+
+            // Agrega la palabra a la cadena
+            palabrasIngresadas += palabraIngresada + " ";
+        }
+
+        // Muestra las palabras en el documento HTML
+        if (palabrasIngresadas.trim() !== "") {
+            palabrasDiv.textContent = "Palabras ingresadas: " + palabrasIngresadas;
+        } else {
+            palabrasDiv.textContent = "No se ingresaron palabras.";
+        }
+    </script>
+</body>
+</html>
+

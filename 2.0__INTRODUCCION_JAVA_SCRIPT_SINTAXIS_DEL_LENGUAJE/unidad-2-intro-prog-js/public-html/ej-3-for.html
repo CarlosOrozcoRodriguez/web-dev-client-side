@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Estilo para los números con borde negro */
+        .numero-con-borde {
+            border: 1px solid black;
+            display: inline-block;
+            padding: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="numeros">
+        <!-- Aquí se mostrarán los números -->
+    </div>
+
+    <script>
+        // Obtén el elemento div donde mostrar los números
+        var numerosDiv = document.getElementById("numeros");
+
+        // Solicita al usuario que introduzca un número (positivo o negativo)
+        var numeroUsuario = prompt("Introduce un número (positivo o negativo):");
+
+        // Convierte el valor introducido a un número entero
+        var numero = parseInt(numeroUsuario);
+
+        // Verifica si es un número válido
+        if (!isNaN(numero)) {
+            // Determina el inicio y el fin del rango de números
+            var inicio = numero > 0 ? 1 : numero;
+            var fin = numero > 0 ? numero : 1;
+
+            // Itera desde el inicio hasta el fin, respetando el signo
+            for (var i = inicio; i <= fin; i++) {
+                // Crea un elemento <span> para cada número con clase "numero-con-borde"
+                var numeroSpan = document.createElement("span");
+                numeroSpan.className = "numero-con-borde";
+                numeroSpan.textContent = i;
+
+                // Agrega el elemento al div
+                numerosDiv.appendChild(numeroSpan);
+            }
+        } else {
+            // Muestra un mensaje de error si el usuario no introdujo un número válido
+            numerosDiv.innerHTML = "Debes introducir un número válido.";
+        }
+    </script>
+</body>
+</html>

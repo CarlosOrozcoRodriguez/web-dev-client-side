@@ -1,0 +1,43 @@
+<!--Cambiando estilos de css  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Botón de cambio de color usando querySelector con etiqueta</h1>
+    <p>Haz click en el botón para cambiar el color del texto.</p>
+    <button type="button" onclick="cambiaColorRed()">Cambiar color</button>
+    <script>
+        function cambiaColorRed() {
+            let text = document.querySelector("p");
+            text.style.color = "red";
+        }
+    </script>
+     <h1>Botón de cambio de color usando querySelector con clase</h1>
+     <p class="parrafo">Haz click en el botón para cambiar el color del texto.</p>
+     <button type="button" onclick="cambiaColorBlue()">Cambiar color</button>
+     <script>
+         function cambiaColorBlue() {
+             let text = document.querySelector(".parrafo");
+             text.style.color = "blue";
+         }
+     </script>
+      <h1>Botón de cambio de color usando querySelector usando id</h1>
+      <p id="parrafo">Haz click en el botón para cambiar el color del texto.</p>
+      <button type="button" onclick="cambiaColorBrown()">Cambiar color</button>
+      <script>
+          function cambiaColorBrown() {
+              let text = document.querySelector("#parrafo");
+              text.style.color = "brown";
+          }
+      </script>
+</body>
+
+</html>

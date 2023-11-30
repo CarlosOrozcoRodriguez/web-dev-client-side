@@ -1,0 +1,27 @@
+<!--Modificación del contenido de una página web  -->
+
+
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Modificando el código HTML</h1>
+<p id="prueba">Modificando el contenido.</p>
+<button type="button"onclick="document.getElementById('prueba').innerHTML = `CAMBIANDO el contenido!`">
+¡Dale!</button>
+
+<h2>El siguiente párrafo ha sido ingresado por el usuario: </h2>
+
+<!-- Así se ingresa texto al html por medio de js -->
+<p id = "texto-promt">Este parrafo será modificado por el promt</p>
+
+<script>
+
+
+    let textoUsuario = prompt("Por favor, ingrese un texto:");
+    document.getElementById('texto-promt').innerHTML = textoUsuario;
+    
+</script>
+
+
+</body>
+</html>

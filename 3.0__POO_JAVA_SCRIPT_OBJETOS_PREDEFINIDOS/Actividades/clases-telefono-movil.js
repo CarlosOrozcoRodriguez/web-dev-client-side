@@ -1,0 +1,2 @@
+/* crea una clase para modelar un objeto "TelefonoMovil"
+que tenga los atributos CPU,RAM,almacenamiento,ancho,alto, numCamaras. Añade un método llamado toString() que muestre por pantalla la información del objeto creado. Crea cuatro objetos con distintos n´mueros de parámetros en la creación  y muestra en pantalla la informaciónd e cada objeto*/
